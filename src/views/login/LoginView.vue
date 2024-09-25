@@ -4,13 +4,10 @@
       <div class="login-box">
         <div class="card shadow-lg p-4" style="max-width: 600px; width: 100%;">
           <div class="card-body">
-            <!-- Fila superior con enlace a la izquierda y una imagen a la derecha -->
             <div class="d-flex justify-content-between align-items-center mb-4">
-              <img src="@/assets/img/login/logo.png" alt="Imagen" class="img-fluid"
-                style="max-width: 100%; height: auto;" />
+              <img src="@/assets/img/login/logo.png" alt="Imagen" class="img-fluid" />
             </div>
 
-            <!-- Mostrar mensaje de error -->
             <div v-if="errorMessage" class="alert alert-danger text-center mb-4" role="alert">
               {{ errorMessage }}
             </div>
@@ -22,8 +19,7 @@
                   <span class="input-group-text">
                     <i class="fas fa-user"></i>
                   </span>
-                  <input type="text" id="username" v-model="username" @input="handleUsernameInput" class="form-control"
-                    placeholder="Usuario" required />
+                  <input type="text" id="username" v-model="username" @input="handleUsernameInput" class="form-control" placeholder="Usuario" required />
                 </div>
               </div>
               <div class="mb-3">
@@ -32,20 +28,18 @@
                   <span class="input-group-text">
                     <i class="fas fa-lock"></i>
                   </span>
-                  <input type="password" id="password" v-model="password" class="form-control" placeholder="Contraseña"
-                    required />
+                  <input type="password" id="password" v-model="password" class="form-control" placeholder="Contraseña" required />
                 </div>
               </div>
               <div class="text-center">
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-success btn-lg">
                   <i class="fas fa-sign-in-alt"></i> Ingresar
                 </button>
               </div>
             </form>
           </div>
-          <!-- Fila inferior con borde morado -->
           <div class="card-footer border-top text-center">
-            <small>Aplicativo SPIO v.0.1</small>
+            <small>Aplicativo DVI v.0.1</small>
           </div>
         </div>
       </div>
@@ -118,8 +112,37 @@ const handleSubmit = async () => {
 </script>
 
 <style scoped>
-/* Estilo para el borde morado en la parte inferior de la tarjeta */
+.container {
+  background-color: #f8f9fa; /* Fondo claro */
+}
+
+.login-box {
+  background-color: #ffffff; /* Fondo blanco para la caja de login */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.card {
+  border: none; /* Sin borde para la tarjeta */
+}
+
 .card-footer {
-  border-bottom: 5px solid #6f42c1; /* Morado */
+  border-top: 5px solid #1a7529; /* Borde superior verde */
+  background-color: #f1f1f1; /* Fondo gris claro */
+}
+
+.input-group-text {
+  background-color: #1a7529; /* Color de fondo verde para los iconos */
+  color: white; /* Color de los iconos */
+}
+
+.btn-success {
+  background-color: #28a745; /* Verde más brillante */
+  border: none; /* Sin borde */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+.btn-success:hover {
+  background-color: #218838; /* Color verde más oscuro al pasar el ratón */
 }
 </style>
