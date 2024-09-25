@@ -13,7 +13,7 @@ const routes = [
   },
   {
     path: '/home',
-    name: 'HOME',
+    name: 'home',
     component: HomeView,
     meta: {
       title: 'DVI',

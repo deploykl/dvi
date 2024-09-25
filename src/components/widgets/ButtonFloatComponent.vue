@@ -2,7 +2,7 @@
   <!-- Contenedor para los botones -->
   <div class="btn-container">
     <!-- Botón de inicio -->
-    <router-link :to="{ name: 'actividades' }" class="btn-link">
+    <router-link :to="{ name: 'home' }" class="btn-link">
       <button class="btn btn-success btn-float">
         <i class="fas fa-home"></i> <!-- Ícono de Font Awesome -->
       </button>

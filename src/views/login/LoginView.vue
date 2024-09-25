@@ -96,7 +96,7 @@ const handleSubmit = async () => {
 
     // Verificar permisos del usuario
     if (is_superuser || (group && group !== 'No definido')) {
-      router.push('/actividades');
+      router.push('/home');
     } else {
       errorMessage.value = 'No tiene grupo asociado con la actividad.';
     }
