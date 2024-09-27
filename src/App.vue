@@ -67,7 +67,6 @@ const showFooter = computed(() => route.name !== 'not-found' && route.path !== '
 
 <style>
 html, body {
-  height: 100vh;
   margin: 0;
 }
 /* Estilos para la transición */

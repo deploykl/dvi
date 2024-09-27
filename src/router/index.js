@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '../views/login/LoginView.vue';
 import HomeView from '../views/HomeView.vue';
+import NotFoundView from '../views/NotFoundView.vue'; // Componente para 404
 
 const routes = [
   {
@@ -17,6 +18,15 @@ const routes = [
     component: HomeView,
     meta: {
       title: 'DVI',
+      requiresAuth: true, // Añadido para requerir autenticación
+    },
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: 'not-found',
+    component: NotFoundView,
+    meta: {
+      title: 'Página no encontrada',
     },
   },
 ]
@@ -30,7 +40,7 @@ router.beforeEach((to, from, next) => {
   const isAuthenticated = !!localStorage.getItem('auth_token');
 
   if (to.meta.requiresAuth && !isAuthenticated) {
-    next({ name: 'HOME' });
+    next({ name: 'login' });
   } else {
     next();
   }
