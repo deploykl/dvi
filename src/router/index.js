@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '../views/login/LoginView.vue';
 import HomeView from '../views/HomeView.vue';
 import NotFoundView from '../views/NotFoundView.vue'; // Componente para 404
+import DireccionView from '@/views/viaticos/admin/DireccionView.vue';
 
 const routes = [
   {
@@ -18,6 +19,15 @@ const routes = [
     component: HomeView,
     meta: {
       title: 'DVI',
+      requiresAuth: true, // Añadido para requerir autenticación
+    },
+  },
+  {
+    path: '/admin/direccion',
+    name: 'direccion',
+    component: DireccionView,
+    meta: {
+      title: 'Dirección',
       requiresAuth: true, // Añadido para requerir autenticación
     },
   },

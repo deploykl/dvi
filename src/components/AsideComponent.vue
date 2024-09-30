@@ -7,30 +7,14 @@
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
-            </li><!-- End Dashboard Nav -->
-
-            <!--          
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-gem"></i><span>Icons</span><i class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="icons-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-circle"></i><span>Remix Icons</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-circle"></i><span>Boxicons</span>
-                        </a>
-                    </li>
-                </ul>
             </li>
-        -->
             <li class="nav-heading">Pages</li>
-            <hr>!-- End Profile Page Nav -->
-
+            <hr>
+            <li class="nav-item">
+                <router-link :to="{ name: 'direccion' }" class="nav-link collapsed">
+                    <i class="fa-solid fa-user"></i><span>Dirección</span>
+                </router-link>
+            </li><!-- End Dashboard Nav -->
         </ul>
         <!-- Botón de Logout (al final) -->
 
