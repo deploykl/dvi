@@ -8,7 +8,7 @@
                 <TableComponent :headers="[
                     { key: 'name', label: 'Nombre', filterable: false },
 
-                ]" :items="usuario" @edit="UPDATE_ID" @delete="DELETE" @delete-multiple="ELIMINARMULTIPLE" />
+                ]" :items="direccion" @edit="UPDATE_ID" @delete="DELETE" @delete-multiple="ELIMINARMULTIPLE" />
             </div>
         </div>
 
@@ -145,7 +145,6 @@ const UPDATE = async () => {
         const accessToken = getAuthToken();
         const response = await api.put(`dvi/direccion/${form.value.id}/`, {
             ...form.value,
-            grupo: form.value.grupo,  // Aquí se pasa el grupo seleccionado
         }, {
             headers: {
                 Authorization: `Bearer ${accessToken}`,
@@ -154,8 +153,8 @@ const UPDATE = async () => {
         });
 
         // Actualizar el usuario en la tabla
-        const index = usuario.value.findIndex(item => item.id === form.value.id);
-        usuario.value[index] = response.data;
+        const index = direccion.value.findIndex(item => item.id === form.value.id);
+        direccion.value[index] = response.data;
         const modal = bootstrap.Modal.getInstance(document.getElementById('addActivityModal'));
         modal.hide();
         resetForm();
@@ -165,7 +164,6 @@ const UPDATE = async () => {
         console.error('Error al actualizar:', error.response ? error.response.data : error.message);
     }
 };
-
 
 
 const DELETE = async (id) => {
@@ -178,7 +176,7 @@ const DELETE = async (id) => {
                 headers: { Authorization: `Bearer ${accessToken}` }
             });
 
-            usuario.value = usuario.value.filter(direccion => direccion.id !== id);
+            direccion.value = direccion.value.filter(direccion => direccion.id !== id);
             await SwalDelete();
         }
     } catch (error) {

@@ -56,7 +56,7 @@ onMounted(() => {
 
 
 // Determina si se deben mostrar los componentes
-const showHeader = computed(() => route.name !== 'not-found' && route.path == '/home' && route.path !== '/' && route.path !== '/' && route.path !== '/control/login');
+const showHeader = computed(() => route.name !== 'not-found' && route.path !== '/');
 const showAside = computed(() => isAsideVisible.value && route.name !== 'not-found' && route.path !== '/login' && route.path !== '/' && route.path !== '/control/login');
 const showPageTitle = computed(() => route.path !== '/' && route.path !== '/login' && route.name !== 'not-found' && route.path !== '/control/login');
 const showFooter = computed(() => route.name !== 'not-found' && route.path !== '/login' && route.path !== '/');
