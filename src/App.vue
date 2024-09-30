@@ -43,7 +43,7 @@ const toggleAside = () => {
   }
 };
 
-// Asegúrate de aplicar la clase adecuada al cargar la página
+// Asegúrate de aplicar la clase adecuada al cargar la páginaG
 onMounted(() => {
   if (isAsideVisible.value) {
     document.body.classList.add('sidebar-expanded');
